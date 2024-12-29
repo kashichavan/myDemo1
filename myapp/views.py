@@ -7,7 +7,7 @@ def create(request):
         if st.is_valid():
             st.save()
     st=StudentForm()
-    return render(request,'create.html',st)
+    return render(request,'create.html',{'st':st})
 
 
 def show(request):
