@@ -38,8 +38,21 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'myapp',
+    'cloudinary',
+    'cloudinary_storage',
     'corsheaders'
 ]
+# Cloudinary Configuration
+import cloudinary
+
+cloudinary.config( 
+    cloud_name = "dtugnbpr7", 
+    api_key = "428916475343797", 
+    api_secret = "v8d1Y04yG4HuW8MoPqoWsqGZr8c"
+)
+
+# Default file storage for media files
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 MIDDLEWARE = [
     

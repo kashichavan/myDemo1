@@ -13,3 +13,17 @@ def create(request):
 def show(request):
     data=Student.objects.all()
     return render(request,'show.html',{'data':data})
+
+
+def create_car(request):
+    if request.method=='POST':
+        st=CarForm(request.POST,request.FILES)
+        if st.is_valid():
+            st.save()
+    st=CarForm()
+    return render(request,'create_car.html',{'st':st})
+
+
+def show_car(request):
+    data=Car.objects.all()
+    return render(request,'show_car.html',{'data':data})
